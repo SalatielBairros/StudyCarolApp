@@ -1,1 +1,27 @@
-{}
+{
+    "pipelines": [
+        {
+            "pipelineName": "unique_hlpartnumberslot",
+            "pipelineDescription": "Valores unicos para hlpartnumberslot",
+            "outputDataModelName": "uniquehlpartnumberslot",
+            "overlapDeltaMinutes": 180,
+            "saveToCds": true,
+            "saveToUnified": false,
+            "saveToRealtime": false,
+            "sendToSubscriptions": true,
+            "cronExpressions": [
+              "0 */5 0 ? * * *"
+            ],
+            "processScript": "hlpartnumberslot_uniquehlpartnumber.csql",
+            "sourceEntities": {
+              "stagings": [
+                {
+                  "connectorName": "hlcloud",
+                  "stagingName": "hlpartnumberslot"
+                }
+              ]
+            }
+        }
+    ]
+
+}
