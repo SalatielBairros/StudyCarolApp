@@ -1,6 +1,9 @@
 WITH hlpartnumberslot_uniquehlpartnumberslot AS (
-  select trim(partnumberid) as partnumberid, slotid      
-    from stg_hlcloud_hlpartnumberslot
+  select 
+    partnumberid,
+    slotid,
+    --metadata--
+    from stg_hlcloud_hlpartnumberslot as stg
     qualify ROW_NUMBER() OVER (PARTITION BY partnumberid, slotid ORDER BY mdmCounterForEntity DESC, mdmLastUpdated DESC) = 1  
 ),
 combinedSources AS (
