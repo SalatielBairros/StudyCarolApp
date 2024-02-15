@@ -5,7 +5,7 @@
             "pipelineDescription": "Valores unicos para hlpartnumberslot",
             "outputDataModelName": "uniquepartnumberslot",
             "overlapDeltaMinutes": 180,
-            "saveToCds": true,
+            "saveToCds": false,
             "saveToUnified": false,
             "saveToRealtime": false,
             "sendToSubscriptions": true,
