@@ -3,7 +3,7 @@
         {
             "pipelineName": "unique_hlpartnumberslot",
             "pipelineDescription": "Valores unicos para hlpartnumberslot",
-            "outputDataModelName": "uniquehlpartnumberslot",
+            "outputDataModelName": "uniquepartnumberslot",
             "overlapDeltaMinutes": 180,
             "saveToCds": true,
             "saveToUnified": false,

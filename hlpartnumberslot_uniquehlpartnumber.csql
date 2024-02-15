@@ -1,3 +1,14 @@
+CREATE TEMP FUNCTION rejection_rules(arr ANY TYPE) AS (
+    (SELECT [
+
+        STRUCT(
+          "REJECTION_RULE" as mdmStage,
+          "Não deve começar com CMV" as mdmErrorMsg,
+          (starts_with(record.partnumberid, 'CMV')) as mdmActive
+        )
+    ] FROM UNNEST(arr) AS record)
+);
+
 WITH hlpartnumberslot_uniquehlpartnumberslot AS (
   select 
     partnumberid,
@@ -6,13 +17,18 @@ WITH hlpartnumberslot_uniquehlpartnumberslot AS (
     from stg_hlcloud_hlpartnumberslot as stg
     qualify ROW_NUMBER() OVER (PARTITION BY partnumberid, slotid ORDER BY mdmCounterForEntity DESC, mdmLastUpdated DESC) = 1  
 ),
-combinedSources AS (
-  SELECT * FROM hlpartnumberslot_uniquehlpartnumberslot
+validatedData AS (
+  SELECT 
+    dm.*,
+    (rejection_rules(ARRAY((SELECT AS STRUCT
+            dm.slotid,
+            dm.partnumberid
+        )))) AS mdmErrors
+  FROM hlpartnumberslot_uniquehlpartnumberslot as dm
 ),
 processedData AS (
-  SELECT *
-  FROM combinedSources
+  select *, (EXISTS(SELECT 1 FROM UNNEST(mdmErrors) WHERE mdmActive = true)) AS mdmDeleted
+  from validatedData
 )
 
 SELECT * FROM processedData
-
