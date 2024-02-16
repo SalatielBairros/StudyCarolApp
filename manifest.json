@@ -38,7 +38,7 @@
         },
         "instanceProperties": {
           "properties": {
-            "dockerImage": "studyapp-alg_studyapp:0.1.0",
+            "dockerImage": "studyapp/studyapp-alg_studyapp:0.1.0",
             "flavor": "c1.nano",
             "port": 5000
           }
@@ -47,8 +47,8 @@
     ]
   },
   "docker": [
-    {
-      "dockerName": "labs-ai-apps-production/studyapp-alg_studyapp",
+    {      
+      "dockerName": "studyapp/studyapp-alg_studyapp",
       "dockerTag": "0.1.0",
       "gitBranch": "main",
       "gitPath": "/",
