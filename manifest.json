@@ -12,7 +12,7 @@
             "cronExpressions": [
               "0 */5 0 ? * * *"
             ],
-            "processScript": "hlpartnumberslot_uniquehlpartnumber.csql",
+            "processScript": "pipelines/hlpartnumberslot_uniquehlpartnumber.csql",
             "sourceEntities": {
               "stagings": [
                 {
