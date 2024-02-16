@@ -1,11 +1,11 @@
 
 FROM totvslabs/pycarol:2.30.0
 
-env SRCFOLDER=studyapp
+env SRCFOLDER=src
 
 WORKDIR /app
 ADD requirements.txt /app/
-ADD studyapp/ /app/studyapp/
+ADD src/ /app/studyapp/
 
 RUN pip install -r requirements.txt && \
   pip install gunicorn
