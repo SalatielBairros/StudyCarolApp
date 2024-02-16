@@ -48,7 +48,7 @@
   },
   "docker": [
     {
-      "dockerName": "studyapp-alg_studyapp",
+      "dockerName": "labs-ai-apps-production/studyapp-alg_studyapp",
       "dockerTag": "0.1.0",
       "gitBranch": "main",
       "gitPath": "/",
