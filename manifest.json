@@ -39,7 +39,7 @@
         "instanceProperties": {
           "properties": {
             "dockerImage": "studyapp-alg_studyapp:0.1.0",
-            "flavor": "c1.micro",
+            "flavor": "c1.nano",
             "port": 5000
           }
         }
