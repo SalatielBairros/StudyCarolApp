@@ -38,7 +38,7 @@
         },
         "instanceProperties": {
           "properties": {
-            "dockerImage": "carol/studyapp:0.1.0",
+            "dockerImage": "studyapp-alg_studyapp:0.1.0",
             "flavor": "c1.micro",
             "port": 5000
           }

@@ -1,7 +1,7 @@
 
 FROM totvslabs/pycarol:2.30.0
 
-env SRCFOLDER=src
+ENV SRCFOLDER=src
 
 WORKDIR /app
 ADD requirements.txt /app/
