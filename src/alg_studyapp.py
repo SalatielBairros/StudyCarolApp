@@ -1,6 +1,4 @@
-import sys
 import json
-import random
 
 from pycarol.app.online import Online
 from pycarol.app.online_api import OnlineApi, request
@@ -35,7 +33,7 @@ def sum():
     return result
 
 
-application = OnlineApi('alg_studyapp', 'studyapp.').get_api()
+application = OnlineApi('alg_studyapp').get_api()
 
 
 def main():
