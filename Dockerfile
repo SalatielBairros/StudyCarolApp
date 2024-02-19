@@ -14,4 +14,4 @@ EXPOSE 5000
 
 VOLUME [ "/app" ]
 
-CMD ["gunicorn", "-c", "/app/studyapp/gunicorn.conf.py", "studyapp.alg_studyapp:application"]
+CMD ["gunicorn", "-c", "/app/studyapp/gunicorn.conf.py", "--log-level", "debug", "studyapp.alg_studyapp:application"]

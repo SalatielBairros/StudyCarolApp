@@ -33,7 +33,7 @@ def sum():
     return result
 
 
-application = OnlineApi('alg_studyapp').get_api()
+application = OnlineApi('alg_studyapp', file_path="studyapp.").get_api()
 
 
 def main():
