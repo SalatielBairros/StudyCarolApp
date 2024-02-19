@@ -1,46 +1,15 @@
-import json
+from flask import Flask
 
-from pycarol.app.online import Online
-from pycarol.app.online_api import OnlineApi, request
+app = Flask(__name__)
 
-
-online = Online()
-
-@online.route("hello_world")
+@app.route('/hello_world')
 def hello_world():
-    message = {
-        'message': 'Hello World'
-    }
-    return message
-
-@online.route("sum")
-def sum():
-    total = 0;
-    print(request)
-
-    param = request.json
-
-    if(param != None):
-        for key in param:
-            try:
-                total += float(param[key])
-            except Exception:
-                pass
-
-    result = {
-        'sum': total
-    }
-    return result
-
-
-application = OnlineApi('alg_studyapp', file_path="studyapp.").get_api()
-
+    return "Hello World"
 
 def main():
     """Runs from command prompt
     """
     if __name__ == "__main__":
-        application.run(debug=True, host='0.0.0.0')
-
+        app.run(debug=True, host='0.0.0.0')
 
 main()
