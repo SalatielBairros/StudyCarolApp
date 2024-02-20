@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 
 VOLUME [ "/app" ]
 
-CMD ["python3", "-m", "batchstudyproject.batchstudyproject_algorithm"]
+CMD ["python3", "-m", "batch_sample.batchstudyproject_algorithm"]

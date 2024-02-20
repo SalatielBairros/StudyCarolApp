@@ -87,8 +87,8 @@
       "dockerName": "batchstudyproject-batchstudyproject_algorithm",
       "dockerTag": "0.1.0",
       "gitBranch": "main",
-      "gitPath": "/batch_sample",
-      "gitDockerfileName": "Dockerfile",
+      "gitPath": "/",
+      "gitDockerfileName": "batch_sample/Dockerfile",
       "gitRepoUrl": "https://github.com/SalatielBairros/StudyCarolApp"
     }    
   ]

@@ -74,6 +74,9 @@ dist: clean ## Create the dist file to deploy on Carol
 docker_image: ## Build studyapp-alg_studyapp:0.1.0 Carol app docker image
 	@podman build -t studyapp-alg_studyapp:0.1.0 .
 
+docker_batch_image: ## Build studyapp-alg_studyapp:0.1.0 Carol app docker image
+	@podman build -t batchstudyproject-batchstudyproject_algorithm:0.1.0 -f ./batch_sample/Dockerfile .
+
 docker_run: ## Runs studyapp-alg_studyapp:0.1.0 Carol app docker image
 	@podman run --rm -it -p 5000:5000 studyapp-alg_studyapp:0.1.0
 
