@@ -46,6 +46,34 @@
       }
     ]
   },
+  "batch": {
+    "processes": [
+      {
+        "algorithmDescription": {
+          "en-US": "Study batch task",
+          "pt-BR": "Tarefa batch de estudo"
+        },
+        "algorithmName": "batchstudyproject_algorithm",
+        "algorithmTitle": {
+          "en-US": "Study batch task",
+          "pt-BR": "Tarefa batch de estudo"
+        },
+        "dataModels": [
+          "uniquepartnumberslot"
+        ],
+        "instanceProperties": {
+          "luigi": {
+            "workers": "2"
+          },
+          "properties": {
+            "dockerImage": "carol/batchstudyproject-batchstudyproject_algorithm:0.1.0",
+            "flavor": "c1.micro"
+          }
+        },
+        "name": "batchstudyproject"
+      }
+    ]
+  },
   "docker": [
     {      
       "dockerName": "studyapp-alg_studyapp",
@@ -54,6 +82,14 @@
       "gitPath": "/",
       "gitDockerfileName": "Dockerfile",
       "gitRepoUrl": "https://github.com/SalatielBairros/StudyCarolApp"
-    }
+    },
+    {      
+      "dockerName": "batchstudyproject-batchstudyproject_algorithm",
+      "dockerTag": "0.1.0",
+      "gitBranch": "main",
+      "gitPath": "/batch_sample",
+      "gitDockerfileName": "Dockerfile",
+      "gitRepoUrl": "https://github.com/SalatielBairros/StudyCarolApp"
+    }    
   ]
 }
